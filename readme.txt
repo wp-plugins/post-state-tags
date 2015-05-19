@@ -3,7 +3,7 @@ Contributors: brandbrilliance
 Tags: wp-admin, admin, post state, color, post colours, list, highlight
 Requires at least: 3.8
 Tested up to: 4.2.2
-Stable tag: 1.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -43,3 +43,4 @@ At present there is no interface, however you can override the CSS file yourself
 
 = 1.0 =
 * First release using standard Wordpress colors
+* Modified archive status dashicon to match Archived Post Status plugin 
