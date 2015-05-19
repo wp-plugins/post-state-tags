@@ -13,6 +13,8 @@ Highlights the left border color and background color and reformats the post sta
 
 Highlights the left border color and background color and reformats the post status as visual color tags in the wordpress admin post list view.
 
+> Some inspiration for the tags was taken from the [Landing Pages Plugin] (http://wordpress.org/plugins/landing-pages/)
+
 == Installation ==
 
 Extract the zip file and just drop the contents in the wp-content/plugins/ directory of your WordPress installation and then activate the Plugin from Plugins page.
