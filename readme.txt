@@ -1,7 +1,7 @@
 === Plugin Name ===
 Contributors: brandbrilliance
 Tags: wp-admin, admin, post state, color, post colours, list, highlight
-Requires at least: 3.6
+Requires at least: 3.8
 Tested up to: 4.2.2
 Stable tag: 1.0
 License: GPLv2 or later
