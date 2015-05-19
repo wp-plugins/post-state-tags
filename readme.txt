@@ -1,9 +1,9 @@
 === Plugin Name ===
 Contributors: brandbrilliance
 Tags: wp-admin, admin, post state, color, post colours, list, highlight
-Requires at least: 3.6
+Requires at least: 3.8
 Tested up to: 4.2.2
-Stable tag: 1.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -11,7 +11,18 @@ Highlights the left border color and background color and reformats the post sta
 
 == Description ==
 
-Highlights the left border color and background color and reformats the post status as visual color tags in the wordpress admin post list view.
+Highlights the left border color and background color and reformats the post status as visual color tags in the wordpress admin post list view. Supports the standard Wordpress status for: Published (no styling), Future (Grey), Draft (blue), Pending (green), Private (yellow), Protected (red), Sticky (purple tag only), Archived (brown, via [Archive Post Status](http://wordpress.org/plugins/archived-post-status/) plugin)
+
+= Posts/Pages Features =
+
+* Adds a left thick border color and highlights the line with a light background color, similar to the comments and plugins admin views.
+* Modifies the post status tags added to a Page/Post name to have a tag appearance with matching background color and dashicon
+* Both these changes make it super easy to spot the variety of types of post status in the admin view
+* Supports all Wordpress Post status values: Published (no styling), Future (Grey), Draft (blue), Pending (green), Private (yellow), Protected (red), Sticky (purple tag only)
+* Support for additional post statuses Archived (brown) via [Archive Post Status](http://wordpress.org/plugins/archived-post-status/) plugin  
+* Supports the 4.2 status (in black) of the Front Page and Posts Page (blog page) to easily spot those pages
+
+> Some inspiration for the tags was taken from the [WordPress Landing Pages](http://wordpress.org/plugins/landing-pages/)
 
 == Installation ==
 
@@ -26,8 +37,10 @@ At present there is no interface, however you can override the CSS file yourself
 == Screenshots ==
 
 1. Screenshot sample with default colors for a variety of post types
+2. Screenshot showing the new WP4.2 Front Page and Posts Page "status" 
 
 == Changelog ==
 
 = 1.0 =
 * First release using standard Wordpress colors
+* Modified archive status dashicon to match Archived Post Status plugin 

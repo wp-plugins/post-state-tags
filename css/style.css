@@ -74,4 +74,4 @@
 #the-list .status-archive th.check-column input { margin-left:4px; }
 #the-list .status-archive th, #the-list .status-archive td { background-color:#f0f0f0; }
 .post-state .archive { background:#a67c52;color:#fff; }
-.post-state .archive:before { content: "\f323"; }
+.post-state .archive:before { content: "\f480"; }
