@@ -25,7 +25,7 @@ At present there is no interface, however you can override the CSS file yourself
 
 == Screenshots ==
 
-1. Screenshot sample with default colors 
+1. Screenshot sample with default colors for a variety of post types
 
 == Changelog ==
 
