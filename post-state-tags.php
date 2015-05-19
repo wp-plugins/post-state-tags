@@ -1,9 +1,9 @@
 <?php
 /*
 Plugin Name: Post State Tags
-Plugin URI: http://www.brandbrilliance.co.za
+Plugin URI: https://wordpress.org/plugins/post-state-tags/
 Description: Make your WordPress post state list stand out and add tags (draft, pending, sticky, etc)
-Author: John Brand / Brand Brilliance
+Author: BRANDbrilliance
 Version: 1.0.0
 Author URI: http://www.brandbrilliance.co.za
 */
