@@ -20,7 +20,7 @@ Highlights the left border color and background color and reformats the post sta
 * Both these changes make it super easy to spot the variety of types of post status in the admin view
 * Supports all Wordpress Post status values: Published (no styling), Future (Grey), Draft (blue), Pending (green), Private (yellow), Protected (red), Sticky (purple tag only)
 * Support for additional post statuses Archived (brown) via [Archive Post Status](http://wordpress.org/plugins/archived-post-status/) plugin  
-* Supports the 4.2 status (in black) of the Front Page and Blog Post Page to easily spot those pages
+* Supports the 4.2 status (in black) of the Front Page and Posts Page (blog page) to easily spot those pages
 
 > Some inspiration for the tags was taken from the [WordPress Landing Pages](http://wordpress.org/plugins/landing-pages/)
 
@@ -37,6 +37,7 @@ At present there is no interface, however you can override the CSS file yourself
 == Screenshots ==
 
 1. Screenshot sample with default colors for a variety of post types
+2. Screenshot showing the new WP4.2 Front Page and Posts Page "status" 
 
 == Changelog ==
 
