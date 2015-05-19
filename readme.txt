@@ -43,4 +43,4 @@ At present there is no interface, however you can override the CSS file yourself
 
 = 1.0 =
 * First release using standard Wordpress colors
-* Modified archive status dashicon to match Archived Post Status plugin 
+* Modified post archive status dashicon to match icon from Archived Post Status plugin 
