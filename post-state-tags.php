@@ -2,7 +2,7 @@
 /*
 Plugin Name: Post State Tags
 Plugin URI: https://wordpress.org/plugins/post-state-tags/
-Description: Make your WordPress post state list stand out and add tags (draft, pending, sticky, etc)
+Description: Make your WordPress post state list stand out with colors and color tags (draft, pending, sticky, etc)
 Author: BRANDbrilliance
 Version: 1.0.1
 Author URI: http://www.brandbrilliance.co.za
