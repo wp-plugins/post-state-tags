@@ -22,11 +22,16 @@ Highlights the left border color and background color and reformats the post sta
 * Support for additional post statuses Archived (brown) via [Archive Post Status](http://wordpress.org/plugins/archived-post-status/) plugin  
 * Supports the 4.2 status (in black) of the Front Page and Posts Page (blog page) to easily spot those pages
 
+= IMPORTANT NOTE =
+Unless you posts or pages that have a status **other** than published, nothing will happen or display. So you will have to set one of your posts/pages to DRAFT, PENDING, PROTECTED, PRIVATE or any OTHER status than published, to make it show anything. This plugin doesn't add anything to regular **published** posts, otherwise the screen will looks way too colourful.
+
 > Some inspiration for the tags was taken from the [WordPress Landing Pages](http://wordpress.org/plugins/landing-pages/)
 
 == Installation ==
 
-Extract the zip file and just drop the contents in the wp-content/plugins/ directory of your WordPress installation and then activate the Plugin from Plugins page.
+
+1. Use the Wordpress Admin Plugins installer: Search for the plugin name, and click INSTALL
+1. or Download the ZIP: Extract the zip file and just drop the contents in the wp-content/plugins/ directory of your WordPress installation and then activate the Plugin from Plugins admin page.
 
 == Frequently Asked Questions ==
 
