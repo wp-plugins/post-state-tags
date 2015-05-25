@@ -607,7 +607,7 @@ function bb_pst_view_settings()
 							<p>What's new in <a href="http://wordpress.org/plugins/post-state-tags/changelog/" target="_blank">version <?php echo VERSION; ?></a>.</p>
 							
 							<h4>Support</h4>
-							<p>Feel free to ask for support on the <a href="http://wordpress.org/support/plugin/post-state-tags/" target="_blank">wordpress.org</a>.</p>
+							<p>Feel free to ask for support on the <a href="http://wordpress.org/support/plugin/post-state-tags/" target="_blank">Support Forum</a>.</p>
 							
 							<h4>Plugin Rating</h4>
 							<p>Please <a href="http://wordpress.org/support/view/plugin-reviews/post-state-tags/" target="_blank">vote for the plugin</a>. Thanks!</p>
