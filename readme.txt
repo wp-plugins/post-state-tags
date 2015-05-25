@@ -22,11 +22,16 @@ Highlights the left border color and background color and reformats the post sta
 * Supports all Wordpress Post status values: Published (no styling), Future (Grey), Draft (blue), Pending (green), Private (yellow), Protected (red), Sticky (purple tag only)
 * Support for additional post statuses Archived (brown) via [Archive Post Status](http://wordpress.org/plugins/archived-post-status/) plugin  
 * Supports the 4.2 status (in black) of the Front Page and Posts Page (blog page) to easily spot those pages
+* Define custom colors using the color picker in the Admin Settings screen
+* Define custom dash icons using the dashicons picker in the Admin Settings screen
+* Enable/disable view in Admin Settings screen
+* Enable/disable icons in Admin Settings screen
+* Reset settings to defaults in Admin Settings screen
 
 > <strong>IMPORTANT NOTE</strong><br>
 > If all your posts or pages have a status of published, nothing will display. This plugin doesn't add anything to regular **published** posts, otherwise the screen will look way too colourful. To see the plugin in action, you will have to set at least one of your posts or pages to DRAFT, PENDING, PROTECTED, PRIVATE or any status **other** than published, to make it show something.
 
-= Caveats =
+= Notes =
 
 * Icons appear inside the tag, if enabled.
 * Published status: color, no tag.
