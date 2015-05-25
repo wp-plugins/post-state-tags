@@ -1,4 +1,4 @@
-<?php
+<?php defined( 'ABSPATH' ) OR exit;
 /*
 Plugin Name: Post State Tags
 Plugin URI: http://wordpress.org/plugins/post-state-tags/
@@ -644,41 +644,53 @@ function bb_pst_view_settings()
 
 function bb_pst_on_activation() 
 {
-	$options = get_option('bb_pst_settings');
-print_r($options);	
 
-
-	//echo get_option( $option, $default ); // set value from defaults (reset)
-
-/*
 	if (!get_option(OPTION_INSTALLED)) 
 	{
-	    update_option(SETTING_ENABLED, "1");
-	    update_option(SETTING_ICONS, "1");
-	    update_option(OPTION_INSTALLED, "1");
+	    update_option(SETTING_ENABLED, '1');
+	    update_option(SETTING_ICONS, '1');
+	    update_option(OPTION_INSTALLED, '1');
 	    update_option(OPTION_VERSION, VERSION);
 	
-	    if (false === get_option("capl-color-publish")):
-	        update_option("capl-color-publish", DEFAULT_COLOR_PUBLISH);
-	    endif;
-	
-	    if (false === get_option("capl-color-draft")):
-	        update_option("capl-color-draft", DEFAULT_COLOR_DRAFTS);
-	    endif;
-	
-	    if (false === get_option("capl-color-pending")):
-	        update_option("capl-color-pending", DEFAULT_COLOR_PENDING);
-	    endif;
-	
-	    if (false === get_option("capl-color-future")):
-	        update_option("capl-color-future", DEFAULT_COLOR_FUTURE);
-	    endif;
-	
-	    if (false === get_option("capl-color-private")):
-	        update_option("capl-color-private", DEFAULT_COLOR_PRIVATE);
-	    endif;
+			// Default Statuses
+			$default_post_statuses = bb_pst_get_post_statuses_default();
+			foreach ($default_post_statuses as $custom_post_status)
+			{
+		    $handle = $custom_post_status['option_handle'];
+		    $name = $custom_post_status['name'];
+				if (false === get_option($handle))
+			    update_option($handle, $GLOBALS['SETTINGS']['post']['stati']['colors'][$name]);
+				if (false === get_option($handle).'-icon')
+			    update_option($handle.'-icon', $GLOBALS['SETTINGS']['post']['stati']['icons'][$name]);
+			}
+		
+			// Special Statuses
+		  $custom_post_statuses = bb_pst_get_post_statuses_special();
+			foreach ($custom_post_statuses as $custom_post_status)
+			{
+		    $handle = $custom_post_status['option_handle'];
+				$name = $custom_post_status['name'];
+				if (false === get_option($handle))
+			    update_option($handle, $GLOBALS['SETTINGS']['post']['stati']['colors'][$name]);
+				if (false === get_option($handle).'-icon')
+			    update_option($handle.'-icon', $GLOBALS['SETTINGS']['post']['stati']['icons'][$name]);
+			}	  
+		
+			// Custom Statuses
+		  $custom_post_statuses = bb_pst_get_post_statuses_custom();
+		  if (sizeof($custom_post_statuses) > 0)
+		  {
+				foreach ($custom_post_statuses as $custom_post_status)
+				{
+			    $handle = $custom_post_status['option_handle'];
+					$name = $custom_post_status['name'];
+					if (false === get_option($handle))
+				    update_option($handle, $GLOBALS['SETTINGS']['post']['stati']['colors'][$name]);
+					if (false === get_option($handle).'-icon')
+				    update_option($handle.'-icon', $GLOBALS['SETTINGS']['post']['stati']['icons'][$name]);
+				}	  
+		  }
 	}
-*/
 }
 
 
