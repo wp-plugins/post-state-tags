@@ -1,5 +1,6 @@
 === Plugin Name ===
 Contributors: brandbrilliance
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=D5FQNCTEV2HVJ
 Tags: wp-admin, admin, post state, color, post colours, list, highlight
 Requires at least: 3.8
 Tested up to: 4.2.2
@@ -47,13 +48,25 @@ Highlights the left border color and background color and reformats the post sta
 
 == Frequently Asked Questions ==
 
-= Are there any settings? Can I change colors, icons, disable icons?  =
+= Where are the settings? =
 
-Under SETTINGS, there is a Post State Tags settings page where you can do the following:
-* Enable/disable the plugin
-* Enable/disable the display of the tag icons
-* Pick new primary colors, the lighter background color is automatically calculated using RGB/HSL values
-* Pick new dashicons
+You can click the Settings link on the plugin install screen, or find it under SETTINGS: Post State Tags.
+
+= Can I change colors? =
+
+Yes. In the settings admin screen, you can change the color values using the color picker. The lighter background color is automatically calculated using RGB/HSL values.
+
+= Can I change icons? =
+
+Yes. In the settings admin screen, you can pick new dash icons using the picker, or enter the dash icon class, see [DashIcons](https://developer.wordpress.org/resource/dashicons/).
+
+= Can I temporarily disable the plugin? =
+
+Yes. In the settings admin screen, there is a checkbox to disable the output (preserve settings).
+
+= Can I hide the little dash icons? =
+
+Yes. In the settings admin screen, there is a checkbox to disable the tag icons (if you prefer).
 
 
 == Screenshots ==
