@@ -12,16 +12,16 @@ Highlights the left border color and background color and reformats the post sta
 
 == Description ==
 
-Highlights the left border color and background color and reformats the post status as visual color tags in the wordpress admin post list view. Supports the standard Wordpress status for: Published (no styling), Future (Grey), Draft (blue), Pending (green), Private (yellow), Protected (red), Sticky (purple tag only), Archived (brown, via [Archive Post Status](http://wordpress.org/plugins/archived-post-status/) plugin)
+Highlights the left border color and background color and reformats the post status as visual color tags in the wordpress admin post list view. Supports the standard Wordpress status for: Published, Future, Draft, Pending, Private, Protected, Sticky (tag only) and custom statuses like Archived (via [Archive Post Status](http://wordpress.org/plugins/archived-post-status/) plugin.
 
 = Posts/Pages Features =
 
 * Adds a left thick border color and highlights the line with a light background color, similar to the comments and plugins admin views.
 * Modifies the post status tags added to a Page/Post name to have a tag appearance with matching background color and dashicon
-* Both these changes make it super easy to spot the variety of types of post status in the admin view
-* Supports all Wordpress Post status values: Published (no styling), Future (Grey), Draft (blue), Pending (green), Private (yellow), Protected (red), Sticky (purple tag only)
-* Support for additional post statuses Archived (brown) via [Archive Post Status](http://wordpress.org/plugins/archived-post-status/) plugin  
-* Supports the 4.2 status (in black) of the Front Page and Posts Page (blog page) to easily spot those pages
+* Both these changes make it super easy to spot the various types of post statuses in the admin view
+* Supports all Wordpress Post status values: Published, Future, Draft, Pending, Private, Protected, Sticky (tag only)
+* Support for custom post statuses like Archived via [Archive Post Status](http://wordpress.org/plugins/archived-post-status/) plugin  
+* Supports the 4.2 status of the Front Page and Posts Page (blog page) to easily spot those pages
 * Define custom colors using the color picker in the Admin Settings screen
 * Define custom dash icons using the dashicons picker in the Admin Settings screen
 * Enable/disable view in Admin Settings screen
