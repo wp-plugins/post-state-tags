@@ -29,7 +29,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 require_once('libraries/colorhsl.php');
 
-const VERSION = '1.1.0';
+const VERSION = '1.1.1';
 
 const TEXT_DOMAIN = 'post-state-tags';
 const ADMIN_PAGE_OPTIONS = 'bb_pst_admin_options';
