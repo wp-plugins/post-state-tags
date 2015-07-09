@@ -3,7 +3,7 @@
 Plugin Name: Post State Tags
 Plugin URI: http://wordpress.org/plugins/post-state-tags/
 Description: Make your WordPress post state list stand out with colors and color tags (draft, pending, sticky, etc)
-Version: 1.1.0
+Version: 1.1.1
 Author: BRANDbrilliance
 Author URI: http://www.brandbrilliance.co.za
 License: GPLv2 or later
@@ -65,6 +65,7 @@ $GLOBALS['SETTINGS']['post']['stati'] = array (
 		'page_for_posts'=> '#000000', // WP 4.2
 		'archive' 			=> '#a67c52', // Custom Plugin
 	),
+	'lightvalue' => 0.97, 
 	'icons' => array (
 		'publish' 			=> '',
 		'draft' 				=> 'dashicons-edit',
@@ -258,7 +259,10 @@ function bb_pst_color_builder($status, $color) {
   $style = '';
   $class = ($status != 'protected') ? ".status-$status" : ".post-password-required";
 
-	$lightcolor = get_light_color(str_replace('#', '', $color), 0.97);
+	// use filter to modify light color
+	$lightvalue = $GLOBALS['SETTINGS']['post']['stati']['lightvalue'];
+	$lightvalue = apply_filters( 'bb_pst_lightvalue', $lightvalue);
+	$lightcolor = get_light_color(str_replace('#', '', $color), $lightvalue);
 	if ($lightcolor)
 	{
 		$lightcolor = "#$lightcolor";
@@ -634,6 +638,28 @@ function bb_pst_view_settings()
 
 
 /**
+ *  bb_pst_settings_links
+ *
+ *  Add settings link to the plugin action links
+ *
+ *  @since    1.1.0
+ *  @created  2015-05-23
+ */ 
+ 
+function bb_pst_settings_links( $links )
+{
+	return array_merge(
+		array(
+			'settings' => '<a href="' . admin_url( 'options-general.php?page='.ADMIN_PAGE_OPTIONS). '">' . __('Settings', TEXT_DOMAIN) . '</a>'
+		),
+		$links
+	);
+}
+add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), 'bb_pst_settings_links' );
+
+
+
+/**
  *  bb_pst_on_activation
  *
  *  Set default value for plugin settings during plugin activation
@@ -647,11 +673,12 @@ function bb_pst_on_activation()
 
 	if (!get_option(OPTION_INSTALLED)) 
 	{
-	    update_option(SETTING_ENABLED, '1');
-	    update_option(SETTING_ICONS, '1');
 	    update_option(OPTION_INSTALLED, '1');
 	    update_option(OPTION_VERSION, VERSION);
 	
+	    update_option(SETTING_ENABLED, '1');
+	    update_option(SETTING_ICONS, '1');
+
 			// Default Statuses
 			$default_post_statuses = bb_pst_get_post_statuses_default();
 			foreach ($default_post_statuses as $custom_post_status)
@@ -692,28 +719,10 @@ function bb_pst_on_activation()
 		  }
 	}
 }
+register_activation_hook( __FILE__, 'bb_pst_on_activation' );
 
-
-
-/**
- *  bb_pst_settings_links
- *
- *  Add settings link to the plugin action links
- *
- *  @since    1.1.0
- *  @created  2015-05-23
- */ 
- 
-function bb_pst_settings_links( $links )
-{
-	return array_merge(
-		array(
-			'settings' => '<a href="' . admin_url( 'options-general.php?page='.ADMIN_PAGE_OPTIONS). '">' . __('Settings', TEXT_DOMAIN) . '</a>'
-		),
-		$links
-	);
-}
-add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), 'bb_pst_settings_links' );
-
+// Todo 
+//register_deactivation_hook( __FILE__, 'bb_pst_on_deactivation' );
+//register_uninstall_hook( __FILE__, 'bb_pst_on_uninstall' );
 
 ?>

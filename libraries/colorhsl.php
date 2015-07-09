@@ -41,7 +41,7 @@ function rgb2hsl($var_r, $var_g, $var_b) {
 		if ($h < 0) $h += 1;
 		if ($h > 1) $h -= 1;
   }
-  return ['h'=>$h,'s'=>$s,'l'=>$l];
+  return array('h'=>$h,'s'=>$s,'l'=>$l);
 }
 
 
@@ -62,7 +62,7 @@ function hsl2rgb($h2,$s2,$l2) {
 		$g = round(255 * hue_2_rgb($var_1,$var_2,$h2));
 		$b = round(255 * hue_2_rgb($var_1,$var_2,$h2 - (1 / 3)));
 	}
-  return ['r' => $r, 'g' => $g, 'b' => $b];
+  return array('r' => $r, 'g' => $g, 'b' => $b);
 }
 
 function hue_2_rgb($v1,$v2,$vh) {
