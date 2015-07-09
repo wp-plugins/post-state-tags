@@ -77,7 +77,7 @@ Yes. In the settings admin screen, there is a checkbox to disable the tag icons 
 
 There isn't currently a backend setting, but I added support for this in a filter hook. Here is an example to add to your functions.php file (in your theme/child theme):
 
-`function my_lightvalue( $lightvalue) {
+`function my_lightvalue( $lightvalue ) {
 	// override lightvalue, default value is 0.97
 	// 0.5 is equal to main color (tag becomes invisible)
 	// 0.4 is darker than main color
