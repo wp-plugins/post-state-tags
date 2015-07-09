@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: wp-admin, admin, post state, color, post colours, list, highlight
 Requires at least: 3.8
 Tested up to: 4.2.2
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -73,6 +73,21 @@ Yes. In the settings admin screen, there is a checkbox to disable the output (pr
 
 Yes. In the settings admin screen, there is a checkbox to disable the tag icons (if you prefer).
 
+= How do I change the light background color value =
+
+There isn't currently a backend setting, but I added support for this in a filter hook. Here is an example to add to your functions.php file (in your theme/child theme):
+
+`function my_lightvalue( $lightvalue) {
+	// override lightvalue, default value is 0.97
+	// 0.5 is equal to main color (tag becomes invisible)
+	// 0.4 is darker than main color
+	// 0.8 is slightly darker than default
+	$lightvalue = 0.8;
+  return $lightvalue;
+}
+add_filter( 'bb_pst_lightvalue', 'my_lightvalue', 10, 2 );
+`
+
 
 == Screenshots ==
 
@@ -81,6 +96,9 @@ Yes. In the settings admin screen, there is a checkbox to disable the tag icons 
 3. Screenshot showing the Settings interface where you can adjust settings like colors, icons 
 
 == Changelog ==
+
+= 1.1.1 =
+* Added filter for background color light value, with example code in FAQ
 
 = 1.1.0 =
 * Added Settings interface for: enable, icon visbility, post status color picker and dashicons picker

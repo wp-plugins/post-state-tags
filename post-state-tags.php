@@ -3,7 +3,7 @@
 Plugin Name: Post State Tags
 Plugin URI: http://wordpress.org/plugins/post-state-tags/
 Description: Make your WordPress post state list stand out with colors and color tags (draft, pending, sticky, etc)
-Version: 1.1.0
+Version: 1.1.1
 Author: BRANDbrilliance
 Author URI: http://www.brandbrilliance.co.za
 License: GPLv2 or later
@@ -65,6 +65,7 @@ $GLOBALS['SETTINGS']['post']['stati'] = array (
 		'page_for_posts'=> '#000000', // WP 4.2
 		'archive' 			=> '#a67c52', // Custom Plugin
 	),
+	'lightvalue' => 0.97, 
 	'icons' => array (
 		'publish' 			=> '',
 		'draft' 				=> 'dashicons-edit',
@@ -258,7 +259,10 @@ function bb_pst_color_builder($status, $color) {
   $style = '';
   $class = ($status != 'protected') ? ".status-$status" : ".post-password-required";
 
-	$lightcolor = get_light_color(str_replace('#', '', $color), 0.97);
+	// use filter to modify light color
+	$lightvalue = $GLOBALS['SETTINGS']['post']['stati']['lightvalue'];
+	$lightvalue = apply_filters( 'bb_pst_lightvalue', $lightvalue);
+	$lightcolor = get_light_color(str_replace('#', '', $color), $lightvalue);
 	if ($lightcolor)
 	{
 		$lightcolor = "#$lightcolor";
