@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: wp-admin, admin, post state, color, post colours, list, highlight
 Requires at least: 3.8
 Tested up to: 4.2.2
-Stable tag: 1.1.1
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,16 +12,16 @@ Highlights the left border color and background color and reformats the post sta
 
 == Description ==
 
-Highlights the left border color and background color and reformats the post status as visual color tags in the wordpress admin post list view. Supports the standard Wordpress status for: Published, Future, Draft, Pending, Private, Protected, Sticky (tag only) and custom statuses like Archived (via [Archive Post Status](http://wordpress.org/plugins/archived-post-status/) plugin.
+Highlights the left border color and background color and reformats the post status as visual color tags in the wordpress admin post list view. Supports the standard Wordpress status for: Published (no styling), Future (Grey), Draft (blue), Pending (green), Private (yellow), Protected (red), Sticky (purple tag only), Archived (brown, via [Archive Post Status](http://wordpress.org/plugins/archived-post-status/) plugin)
 
 = Posts/Pages Features =
 
 * Adds a left thick border color and highlights the line with a light background color, similar to the comments and plugins admin views.
 * Modifies the post status tags added to a Page/Post name to have a tag appearance with matching background color and dashicon
-* Both these changes make it super easy to spot the various types of post statuses in the admin view
-* Supports all Wordpress Post status values: Published, Future, Draft, Pending, Private, Protected, Sticky (tag only)
-* Support for custom post statuses like Archived via [Archive Post Status](http://wordpress.org/plugins/archived-post-status/) plugin  
-* Supports the 4.2 status of the Front Page and Posts Page (blog page) to easily spot those pages
+* Both these changes make it super easy to spot the variety of types of post status in the admin view
+* Supports all Wordpress Post status values: Published (no styling), Future (Grey), Draft (blue), Pending (green), Private (yellow), Protected (red), Sticky (purple tag only)
+* Support for additional post statuses Archived (brown) via [Archive Post Status](http://wordpress.org/plugins/archived-post-status/) plugin  
+* Supports the 4.2 status (in black) of the Front Page and Posts Page (blog page) to easily spot those pages
 * Define custom colors using the color picker in the Admin Settings screen
 * Define custom dash icons using the dashicons picker in the Admin Settings screen
 * Enable/disable view in Admin Settings screen
@@ -57,6 +57,10 @@ Highlights the left border color and background color and reformats the post sta
 
 You can click the Settings link on the plugin install screen, or find it under SETTINGS: Post State Tags.
 
+= Are there default colors and icons or How can I reset to defaults? =
+
+You can simply go to the settings and click the reset to defaults button at the bottom to reset all the colors and dash-icons to their default values.
+
 = Can I change colors? =
 
 Yes. In the settings admin screen, you can change the color values using the color picker. The lighter background color is automatically calculated using RGB/HSL values.
@@ -73,21 +77,6 @@ Yes. In the settings admin screen, there is a checkbox to disable the output (pr
 
 Yes. In the settings admin screen, there is a checkbox to disable the tag icons (if you prefer).
 
-= How do I change the light background color value =
-
-There isn't currently a backend setting, but I added support for this in a filter hook. Here is an example to add to your functions.php file (in your theme/child theme):
-
-`function my_lightvalue( $lightvalue ) {
-	// override lightvalue, default value is 0.97
-	// 0.5 is equal to main color (tag becomes invisible)
-	// 0.4 is darker than main color
-	// 0.8 is slightly darker than default
-	$lightvalue = 0.8;
-  return $lightvalue;
-}
-add_filter( 'bb_pst_lightvalue', 'my_lightvalue', 10, 2 );
-`
-
 
 == Screenshots ==
 
@@ -96,9 +85,6 @@ add_filter( 'bb_pst_lightvalue', 'my_lightvalue', 10, 2 );
 3. Screenshot showing the Settings interface where you can adjust settings like colors, icons 
 
 == Changelog ==
-
-= 1.1.1 =
-* Added filter for background color light value, with example code in FAQ
 
 = 1.1.0 =
 * Added Settings interface for: enable, icon visbility, post status color picker and dashicons picker
