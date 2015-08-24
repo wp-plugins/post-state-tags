@@ -3,7 +3,7 @@
 Plugin Name: Post State Tags
 Plugin URI: http://wordpress.org/plugins/post-state-tags/
 Description: Make your WordPress post state list stand out with colors and color tags (draft, pending, sticky, etc)
-Version: 1.1.1
+Version: 1.1.2
 Author: BRANDbrilliance
 Author URI: http://www.brandbrilliance.co.za
 License: GPLv2 or later
@@ -29,7 +29,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 require_once('libraries/colorhsl.php');
 
-const VERSION = '1.1.1';
+const VERSION = '1.1.2';
 
 const TEXT_DOMAIN = 'post-state-tags';
 const ADMIN_PAGE_OPTIONS = 'bb_pst_admin_options';
@@ -148,8 +148,8 @@ function bb_pst_admin_enqueue_scripts($hook) {
 		// Add Color styles for any page or posts page, using edit.php
 		// hook: edit
     if ( 'edit.php' == $hook ) {
-			// add as inline styles
-	    wp_enqueue_style( 'poststates', get_template_directory_uri() . '/css/poststates.css' );
+			// add as inline styles appended to dummy stylesheet
+	    wp_enqueue_style( 'poststates', plugin_dir_url( __FILE__ ) . 'css/poststates.css' );
 	    wp_add_inline_style( 'poststates', bb_pst_get_css_poststates () );
     }
 
@@ -257,7 +257,17 @@ function bb_pst_color_builder($status, $color) {
 		return;
 
   $style = '';
-  $class = ($status != 'protected') ? ".status-$status" : ".post-password-required";
+
+	// map status values to classes (wordpress does this)
+	switch ($status)
+	{
+		case 'protected':
+			$class = ".post-password-required";
+			break;	
+		
+		default: 
+			$class = ".status-$status";
+	}
 
 	// use filter to modify light color
 	$lightvalue = $GLOBALS['SETTINGS']['post']['stati']['lightvalue'];
@@ -278,7 +288,18 @@ function bb_pst_tag_builder($status, $color, $icon = '') {
   if ($status == '' || $color !='' && $color == 'transparent')
 		return;
 
-  $style = ".post-state .$status {background:$color;color:#fff;}\n";
+	// map status values to classes (wordpress does this)
+	switch ($status)
+	{
+		case 'future':
+			$class = 'scheduled';
+			break;	
+		
+		default: 
+			$class = $status;
+	}
+
+  $style = ".post-state .$class {background:$color;color:#fff;}\n";
 
   return $style;
 }
@@ -294,8 +315,20 @@ function bb_pst_display_post_states ( $post_states ) {
 		foreach ( $post_states as $key=>&$state ) {
 
 			// get icon
-			if (get_option(SETTING_ICONS) == 1)
-		    $iconname = get_option(SETTING_COLORS_PFX . sanitize_key($key) . '-icon');
+			if (get_option(SETTING_ICONS) == 1) {
+
+				// map status values to classes (wordpress does this)
+				switch ($key)
+				{
+					case 'scheduled':
+						$lkey = 'future';
+						break;	
+					
+					default: 
+						$lkey = $key;
+				}
+		    $iconname = get_option(SETTING_COLORS_PFX . sanitize_key($lkey) . '-icon');
+			}
 
 			// add tag
 			$state = '<span class="'. $key.' states">'. ($iconname ? '<span class="dashicons '.$iconname.'"></span>' : '') . $state . '</span>'; // strtolower( $state )

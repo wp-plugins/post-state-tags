@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: wp-admin, admin, post state, color, post colours, list, highlight
 Requires at least: 3.8
 Tested up to: 4.3
-Stable tag: 1.1.1
+Stable tag: 1.1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -100,6 +100,9 @@ add_filter( 'bb_pst_lightvalue', 'my_lightvalue', 10, 2 );
 3. Screenshot showing the Settings interface where you can adjust settings like colors, icons 
 
 == Changelog ==
+
+= 1.1.2 =
+* Added corrected support for new inline scheduled post status
 
 = 1.1.1 =
 * Added filter for background color light value, with example code in FAQ
